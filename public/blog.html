@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog : </title>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="css/blog.css">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="img/logo.png" class="logo" alt="">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search blogs...">
+            <button id="search-button">Search</button>
+        </div>
+        <ul class="links-container">
+            <li class="link-item"><a href="/" class="link">home</a></li>
+            <li class="link-item"><a href="/editor" class="link">editor</a></li>
+            <!-- The login link will be added dynamically by nav.js -->
+        </ul>
+    </nav>
+    
+    <div class="banner"></div>
+
+    <div class="blog">
+        <h1 class="title"></h1>
+        <p class="published"><span>published at - </span></p>
+        <a href="/${blogId}/editor" class="btn" id="edit-blog-btn">edit blog</a>
+        <div class="article">
+            
+        </div>
+    </div>
+    <section class="comments-section">
+        <h2>Comments</h2>
+        <form class="comment-form">
+            <textarea placeholder="Write a comment..."></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+        <ul class="comment-list">
+            <li class="comment">
+                <div class="comment-header">
+                    <span class="comment-author">   
+
+    <h1 class="sub-heading">Read more</h1>
+
+    <!-- blog section -->
+    <section class="blogs-section">
+         <div class="blog-card">
+            <img src="img/linkedin-statistics.png" class="blog-image" alt="">
+            <h1 class="blog-title">How to Build a Personal Brand on LinkedIn.</h1>
+            <p class="blog-overview">In today's digital world, building a personal brand is key to professional success, and LinkedIn is the perfect platform to do so...</p>
+            <a href="/" class="btn dark">read</a>
+        </div> 
+    </section>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyA6P-KX-hmWT1Ko-EHPTFuAr8D9pju3jJY",
+            authDomain: "blog-website-c5a88.firebaseapp.com",
+            projectId: "blog-website-c5a88",
+            storageBucket: "blog-website-c5a88.appspot.com",
+            messagingSenderId: "840715638159",
+            appId: "1:840715638159:web:75f91e5da277a1fa2167fa"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // Make db available globally
+        window.db = db;
+        window.auth = auth;
+    </script>
+    <script type="module" src="js/blog.js"></script>
+    <script type="module" src="js/home.js"></script>
+    <script type="module" src="js/nav.js"></script>
+    <script type="module" src="js/search.js"></script>
+    <script type="module" src="js/comments.js"></script>
+    
+</body>
+</html>

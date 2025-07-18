@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- firebase auth ui-->
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="img/logo.png" class="logo" alt="">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search blogs...">
+            <button id="search-button">Search</button>
+        </div>
+        <ul class="links-container">
+            <li class="link-item"><a href="/" class="link">home</a></li>
+            <li class="link-item"><a href="/editor" class="link">editor</a></li>
+            <!-- The login link will be added dynamically by nav.js -->
+        </ul>
+    </nav>
+
+    <div class="login">
+        <div id="loginUI"></div>
+    </div>
+
+    <div class="dashboard-content">
+        <h1 class="heading">your blogs</h1>
+        <!-- Add more dashboard content here -->
+    </div>
+      <!--blog section --> 
+     <section class="blogs-section">
+        <!--<div class="blog-card">
+            <img src="img/header.png" class="blog-image" alt="">
+            <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
+            <p class="blog-overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt incidunt fugiat quos porro repellat harum. Adipisci tempora corporis rem cum.</p>
+            <a href="/" class="btn dark">read</a>
+            <a href="/" class="btn grey">edit</a>
+            <a href="/" class="btn danger">delete</a>
+        </div> -->
+    </section>
+<!-- firebase cong-->
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+    
+        const firebaseConfig = {
+            apiKey: "AIzaSyA6P-KX-hmWT1Ko-EHPTFuAr8D9pju3jJY",
+            authDomain: "blog-website-c5a88.firebaseapp.com",
+            projectId: "blog-website-c5a88",
+            storageBucket: "blog-website-c5a88.appspot.com",
+            messagingSenderId: "840715638159",
+            appId: "1:840715638159:web:75f91e5da277a1fa2167fa"
+        };
+    
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+    
+        // Make db and auth available globally
+        window.db = db;
+        window.auth = auth;
+    </script>
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="js/nav.js"></script>
+    <script type="module" src="js/search.js"></script>
+</body>
+</html>

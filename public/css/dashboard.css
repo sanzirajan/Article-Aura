@@ -1,0 +1,50 @@
+body {
+    background: #ececec;
+    margin-top: 60px; /* Add this to account for the fixed navbar */
+}
+
+.login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* login hover */
+.firebaseui-idp-button:hover {
+    background: #000 !important;
+}
+.firebaseui-idp-button:hover .firebaseui-idp-text {
+    color: #fff !important;
+    transition: .5s;
+}
+
+.dashboard-content {
+    padding: 20px;
+    margin-top: 60px; /* Add this to push content below the navbar */
+}
+
+.heading {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    margin: 100px 0;
+}
+ 
+.btn.grey{
+    background: #c5c5c5;
+     color: #000;
+    margin: 0 10px;
+    }
+    .btn.danger{
+    background: #f00;
+    color:
+    #fff;
+    }
